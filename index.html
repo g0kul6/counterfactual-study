@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Counterfactual Study for Reward Models in Robot Manipulation</title>
+<meta name="description" content="A study of which counterfactual failure data (teleoperation, policy rollouts, human videos, real2sim) makes the best reward models for real-robot RL.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Counterfactual Study for Reward Models in Robot Manipulation">
+<meta property="og:description" content="Which failures are worth collecting? Four sources of counterfactual data, five real tasks, real-robot RL.">
+<meta property="og:image" content="media/teaser.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<header class="head">
+  <h1>Counterfactual Study for Reward Models in Robot&nbsp;Manipulation</h1>
+  <p class="sub">Which failures should you collect to train a reward model for robot RL?</p>
+  <p class="authors">
+    <span>Gokul Kannan Thiruvenkadam</span>
+    <span>Vishal M. Patel</span>
+    <span>Homanga Bharadhwaj</span>
+  </p>
+  <p class="affil">Johns Hopkins University</p>
+  <nav class="links" aria-label="Paper links">
+    <a class="btn" href="#" data-todo="paper">Paper</a>
+    <a class="btn" href="#" data-todo="arxiv">arXiv</a>
+    <a class="btn" href="#teaser">Video</a>
+    <a class="btn" href="#" data-todo="code">Code</a>
+    <a class="btn ghost" href="#bibtex">BibTeX</a>
+  </nav>
+  <p class="tldr"><b>TL;DR</b> Reward models for RL need to see failures, and failures are expensive to record on a real robot. We collect counterfactual failures from four sources (teleoperation, policy rollouts, human videos and real2sim), adapt the same reward model on each, and use it to post-train π₀ with RL on real hardware. Teleoperated failures give the best rewards, and cheap simulated failures come surprisingly close.</p>
+</header>
+
+<section id="teaser" class="block">
+  <video class="teaser" src="media/teaser.mp4" poster="media/teaser.jpg" controls muted playsinline preload="metadata"></video>
+</section>
+
+<section id="sources" class="block">
+  <h2>Four sources of failure</h2>
+  <p class="lead">Each source records the same five tasks. Every failure is graded by how far it got, from low to high progress. The red overlay marks the agent in a failed attempt.</p>
+  <div class="sources" id="sourceCards"></div>
+</section>
+
+<section id="results" class="block">
+  <h2>RL results</h2>
+  <p class="lead">Each reward model post-trains π₀ with DSRL on the real robot, evaluated over 20 trials per task. Pick a task to see one rollout per reward model.</p>
+  <div class="panel">
+    <div class="win-bar">
+      <div class="pills light" id="rlTabs" role="tablist" aria-label="Task"></div>
+      <span class="badge">Real robot, 20 trials</span>
+    </div>
+    <div class="rl-body">
+      <div class="tiles" id="rlGrid"></div>
+      <aside class="rl-side" id="rlSide"></aside>
+    </div>
+  </div>
+  <p class="note">Evaluation videos play at 20× speed. Hover a clip to clear the color wash.</p>
+
+  <div class="card">
+    <div class="card-head">
+      <h3>Success rate across all three tasks</h3>
+      <div class="legend" id="rlLegend"></div>
+    </div>
+    <div class="chartwrap"><svg id="rlChart" role="img" aria-label="Grouped bar chart of success rate per reward source for remove lid, pour cup, stack cups and the average"></svg><div class="tip" id="rlTip"></div></div>
+    <details class="tbl"><summary>Show as table</summary><div id="rlTable"></div></details>
+  </div>
+</section>
+
+<section id="rewards" class="block">
+  <h2>Reward curves</h2>
+  <p class="lead">Predicted progress from the reward model adapted on each source, on held-out rollouts from our 250-clip benchmark. Pick a task and a clip, then play or scrub. The dotted line is the human-graded credit for that clip.</p>
+  <div class="window">
+    <div class="win-bar">
+      <div class="pills" id="rwTabs" role="tablist" aria-label="Task"></div>
+      <span class="badge">Offline benchmark</span>
+    </div>
+    <div class="win-body">
+      <div class="win-left">
+        <div class="vid" id="vidBox">
+          <video id="video" muted playsinline preload="auto" disablepictureinpicture></video>
+          <div class="pending" id="pending">Clip video not added yet. The curves still scrub.</div>
+        </div>
+        <div class="ctrl">
+          <button class="play" id="play" aria-label="Play">
+            <svg viewBox="0 0 20 20" width="16" height="16"><path id="playIcon" d="M5 3.5v13l11-6.5z" fill="currentColor"/></svg>
+          </button>
+          <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Scrub through the clip">
+          <span class="tval" id="tval">0%</span>
+        </div>
+        <div class="clips" id="clipChips" role="tablist" aria-label="Clip"></div>
+        <p class="prompt" id="prompt"></p>
+      </div>
+      <div class="win-right">
+        <svg id="curve" viewBox="0 0 560 360" role="img" aria-label="Predicted progress over the clip for each reward model"></svg>
+        <div class="toggles" id="toggles"></div>
+        <div class="readout" id="readout"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bibtex" class="block">
+  <h2>BibTeX</h2>
+<pre class="bib">@article{thiruvenkadam2026counterfactual,
+  title   = {Counterfactual Study for Reward Models in Robot Manipulation},
+  author  = {Thiruvenkadam, Gokul Kannan and Patel, Vishal M. and Bharadhwaj, Homanga},
+  year    = {2026}
+}</pre>
+</section>
+
+</main>
+<footer class="foot">Counterfactual Study · Johns Hopkins University</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+[
+ {
+  "tid": "counterfactual-3dd3a53c77e65ea337703cd7f284f4f7",
+  "out": "media/bench/3dd3a53c77e6.mp4",
+  "frames": 362,
+  "rel": "results_pi05/pour_the_contents_of_the_cup_into_the_grey_box/videos/episode_019_2026_09_15_21:29:10/left.mp4"
+ },
+ {
+  "tid": "counterfactual-a27330a318956309390c2eed0bfd988b",
+  "out": "media/bench/a27330a31895.mp4",
+  "frames": 500,
+  "rel": "results_pi05/pour_the_contents_of_the_cup_into_the_grey_box/videos/episode_009_2026_09_15_21:16:07/left.mp4"
+ },
+ {
+  "tid": "counterfactual-d80ad13564e8ab8a9e96755cac82b006",
+  "out": "media/bench/d80ad13564e8.mp4",
+  "frames": 456,
+  "rel": "results_molmoact2/pour_the_contents_of_the_cup_into_the_grey_box_molmoact2_zeroshot/videos/episode_014_2026_09_15_23-05-38/left.mp4"
+ },
+ {
+  "tid": "counterfactual-f8252a8af0b12a26941fff4d9dd26dcf",
+  "out": "media/bench/f8252a8af0b1.mp4",
+  "frames": 400,
+  "rel": "results_pi05/pour_the_contents_of_the_cup_into_the_grey_box/videos/episode_001_2026_09_15_21:04:08/left.mp4"
+ },
+ {
+  "tid": "counterfactual-869c06ff561a28cd45e7778ebe9014d3",
+  "out": "media/bench/869c06ff561a.mp4",
+  "frames": 500,
+  "rel": "results_molmoact2/pour_the_contents_of_the_cup_into_the_grey_box_molmoact2_zeroshot/videos/episode_005_2026_09_15_22-49-07/left.mp4"
+ },
+ {
+  "tid": "counterfactual-3b3b04b662fe969421f3448127d75b94",
+  "out": "media/bench/3b3b04b662fe.mp4",
+  "frames": 304,
+  "rel": "results_molmoact2/put_the_sellotape_in_the_grey_box_molmoact2_zeroshot/videos/episode_021_2026_09_15_23-54-18/left.mp4"
+ },
+ {
+  "tid": "counterfactual-0bad4cdd9583f21b23629acae3b8185e",
+  "out": "media/bench/0bad4cdd9583.mp4",
+  "frames": 400,
+  "rel": "results_pi05/put_the_sellotape_in_the_grey_box/videos/episode_019_2026_09_15_20:52:24/left.mp4"
+ },
+ {
+  "tid": "counterfactual-dbe4306ffd1c9068cd0ab14d591fb9c8",
+  "out": "media/bench/dbe4306ffd1c.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_sellotape_in_the_grey_box_molmoact2_zeroshot/videos/episode_012_2026_09_15_23-43-08/left.mp4"
+ },
+ {
+  "tid": "counterfactual-fdcba12ab007a35ef463ccd9d3ec9b75",
+  "out": "media/bench/fdcba12ab007.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_sellotape_in_the_grey_box_molmoact2_zeroshot/videos/episode_018_2026_09_15_23-49-59/left.mp4"
+ },
+ {
+  "tid": "counterfactual-5b7168cae16bfc45f4f8dd6a679e1ae8",
+  "out": "media/bench/5b7168cae16b.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_sellotape_in_the_grey_box_molmoact2_zeroshot/videos/episode_004_2026_09_15_23-32-12/left.mp4"
+ },
+ {
+  "tid": "counterfactual-b4a8e00618bd1d87649e52b9eba0446a",
+  "out": "media/bench/b4a8e00618bd.mp4",
+  "frames": 400,
+  "rel": "results_pi05/put_the_spoon_on_the_plate/videos/episode_009_2026_09_15_19:58:57/left.mp4"
+ },
+ {
+  "tid": "counterfactual-a3de0d02839aab2f39d06438e3b9b353",
+  "out": "media/bench/a3de0d02839a.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_spoon_on_the_plate_molmoact2_zeroshot/videos/episode_002_2026_09_16_00-04-32/left.mp4"
+ },
+ {
+  "tid": "counterfactual-c7adbaca1a4cbf00260b7e86f727f45b",
+  "out": "media/bench/c7adbaca1a4c.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_spoon_on_the_plate_molmoact2_zeroshot/videos/episode_025_2026_09_16_00-37-55/left.mp4"
+ },
+ {
+  "tid": "counterfactual-0c22668d8726553225f34dc18d089054",
+  "out": "media/bench/0c22668d8726.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_spoon_on_the_plate_molmoact2_zeroshot/videos/episode_014_2026_09_16_00-22-55/left.mp4"
+ },
+ {
+  "tid": "counterfactual-2a9bc01af90da6f05dfac5b6aed104ea",
+  "out": "media/bench/2a9bc01af90d.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/put_the_spoon_on_the_plate_molmoact2_zeroshot/videos/episode_022_2026_09_16_00-32-29/left.mp4"
+ },
+ {
+  "tid": "counterfactual-5b12ac00dffb3eb5151e5abcf9f246b4",
+  "out": "media/bench/5b12ac00dffb.mp4",
+  "frames": 299,
+  "rel": "results_molmoact2/remove_the_lid_from_pot_molmoact2_zeroshot/videos/episode_024_2026_09_16_01-12-59/left.mp4"
+ },
+ {
+  "tid": "counterfactual-5501f3556008a9239058c8a9288640aa",
+  "out": "media/bench/5501f3556008.mp4",
+  "frames": 178,
+  "rel": "results_pi05/remove_the_lid_from_pot/videos/episode_010_2026_09_15_19:18:45/left.mp4"
+ },
+ {
+  "tid": "counterfactual-b26b24d3b184a707cdd75b58d703d295",
+  "out": "media/bench/b26b24d3b184.mp4",
+  "frames": 310,
+  "rel": "results_pi05/remove_the_lid_from_pot/videos/episode_003_2026_09_15_19:04:04/left.mp4"
+ },
+ {
+  "tid": "counterfactual-40a253871f51190ed2051e23135d1c29",
+  "out": "media/bench/40a253871f51.mp4",
+  "frames": 400,
+  "rel": "results_pi05/remove_the_lid_from_pot/videos/episode_024_2026_09_15_19:45:36/left.mp4"
+ },
+ {
+  "tid": "counterfactual-1516e6810b7c6d6991b7004659eacbd5",
+  "out": "media/bench/1516e6810b7c.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/remove_the_lid_from_pot_molmoact2_zeroshot/videos/episode_006_2026_09_16_00-47-22/left.mp4"
+ },
+ {
+  "tid": "counterfactual-23753914851e57ba38fd007dd4b1d035",
+  "out": "media/bench/23753914851e.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/stack_up_the_cups_together_molmoact2_zeroshot/videos/episode_015_2026_09_16_01-40-48/left.mp4"
+ },
+ {
+  "tid": "counterfactual-89939a3f50652aa5b0a20911551f3812",
+  "out": "media/bench/89939a3f5065.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/stack_up_the_cups_together_molmoact2_zeroshot/videos/episode_007_2026_09_16_01-28-00/left.mp4"
+ },
+ {
+  "tid": "counterfactual-1ca3ea6482bf0739ae77d62d225c2eab",
+  "out": "media/bench/1ca3ea6482bf.mp4",
+  "frames": 400,
+  "rel": "results_pi05/stack_up_the_cups_together/videos/episode_004_2026_09_15_18:17:01/left.mp4"
+ },
+ {
+  "tid": "counterfactual-d898074054beab36d218b1eda0edc958",
+  "out": "media/bench/d898074054be.mp4",
+  "frames": 379,
+  "rel": "results_pi05/stack_up_the_cups_together/videos/episode_010_2026_09_15_18:30:20/left.mp4"
+ },
+ {
+  "tid": "counterfactual-a07a848c1b4a3324842f1ed29c263320",
+  "out": "media/bench/a07a848c1b4a.mp4",
+  "frames": 400,
+  "rel": "results_molmoact2/stack_up_the_cups_together_molmoact2_zeroshot/videos/episode_011_2026_09_16_01-33-17/left.mp4"
+ }
+]
