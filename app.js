@@ -254,7 +254,7 @@ if ('IntersectionObserver' in window) {
     const v = e.target;
     if (e.isIntersecting) { if (v.dataset.src && !v.getAttribute('src')) { v.src = v.dataset.src; } v.play().catch(()=>{}); }
     else if (!v.paused) v.pause();
-  }), {rootMargin:'200px 0px', threshold:0.01});
+  }), {rootMargin:'0px', threshold:0.15});
   const watch = root => root.querySelectorAll('video[data-src]').forEach(v => io.observe(v));
   watch(document); new MutationObserver(() => watch(grid)).observe(grid, {childList:true});
 } else {

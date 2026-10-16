@@ -37,7 +37,7 @@
 </header>
 
 <section id="teaser" class="block">
-  <video class="teaser" src="media/teaser.mp4" poster="media/teaser.jpg" autoplay loop muted playsinline controls preload="auto"></video>
+  <video class="teaser" data-src="media/teaser.mp4" poster="media/teaser.jpg" loop muted playsinline controls preload="none"></video>
   <p class="tldr"><b>TL;DR</b> Reinforcement learning (RL) can improve robot policies beyond imitation learning, but it requires rewards that capture task progress and failure. Learning such rewards requires not only successful demonstrations, but also informative counterfactual failures that can guide the model on behaviors to penalize. However, large-scale robot datasets are dominated by successful behavior, and collecting failures on real hardware is expensive. This raises a practical question: given a limited data-collection budget, which sources of counterfactual experience are worth investing in? We compare four sources of failure data: teleoperated failures, policy rollouts, human videos, and real-to-sim rollouts, across five real-world manipulation tasks. By keeping the task suite, successful demonstrations, and the evaluation setup fixed, we study the effect of these sources through LoRA adaptation of a reward model and few-shot prompting of a frozen model in two different data scale scenarios. We evaluate the resulting reward models on a custom held-out benchmark of 250 human-annotated policy rollouts, measuring trajectory ranking, partial-completion calibration, and success detection. Finally, we use selected reward models to guide RL post-training of π₀ and test whether improvements in offline reward quality translate into better robot behavior. In sum, our study examines whether inexpensive counterfactual sources can match or surpass smaller amounts of faithful real-robot failure data when scaled, for improving rewards models in robot manipulation.</p>
 </section>
 
@@ -60,7 +60,7 @@
       <aside class="rl-side" id="rlSide"></aside>
     </div>
   </div>
-  <p class="note">Evaluation videos play at 20× speed. Hover a clip to clear the color wash.</p>
+  <p class="note">Evaluation videos play at 20× speed. Each clip is labelled with its reward source and success rate.</p>
 
   <div class="card">
     <div class="card-head">
