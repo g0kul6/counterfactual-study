@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Counterfactual Study for Reward Models in Robot Manipulation</title>
+<title>The Right Kind of Wrong: Counterfactual Data for Reward Learning in Manipulation</title>
 <meta name="description" content="A study of which counterfactual failure data (teleoperation, policy rollouts, human videos, real2sim) makes the best reward models for real-robot RL.">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Counterfactual Study for Reward Models in Robot Manipulation">
+<meta property="og:title" content="The Right Kind of Wrong: Counterfactual Data for Reward Learning in Manipulation">
 <meta property="og:description" content="Which failures are worth collecting? Four sources of counterfactual data, five real tasks, real-robot RL.">
 <meta property="og:image" content="media/teaser.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
 <main>
 
 <header class="head">
-  <h1>Counterfactual Study for Reward Models in Robot&nbsp;Manipulation</h1>
+  <h1>The Right Kind of Wrong<span class="h1sub">Counterfactual Data for Reward Learning in&nbsp;Manipulation</span></h1>
   <p class="sub">Which failures should you collect to train a reward model for robot RL?</p>
   <p class="authors">
     <span>Gokul Kannan Thiruvenkadam</span>
@@ -34,16 +34,16 @@
     <a class="btn" href="#" data-todo="code">Code</a>
     <a class="btn ghost" href="#bibtex">BibTeX</a>
   </nav>
-  <p class="tldr"><b>TL;DR</b> Reward models for RL need to see failures, and failures are expensive to record on a real robot. We collect counterfactual failures from four sources (teleoperation, policy rollouts, human videos and real2sim), adapt the same reward model on each, and use it to post-train π₀ with RL on real hardware. Teleoperated failures give the best rewards, and cheap simulated failures come surprisingly close.</p>
 </header>
 
 <section id="teaser" class="block">
-  <video class="teaser" src="media/teaser.mp4" poster="media/teaser.jpg" controls muted playsinline preload="metadata"></video>
+  <video class="teaser" src="media/teaser.mp4" poster="media/teaser.jpg" autoplay loop muted playsinline controls preload="auto"></video>
+  <p class="tldr"><b>TL;DR</b> Reinforcement learning (RL) can improve robot policies beyond imitation learning, but it requires rewards that capture task progress and failure. Learning such rewards requires not only successful demonstrations, but also informative counterfactual failures that can guide the model on behaviors to penalize. However, large-scale robot datasets are dominated by successful behavior, and collecting failures on real hardware is expensive. This raises a practical question: given a limited data-collection budget, which sources of counterfactual experience are worth investing in? We compare four sources of failure data: teleoperated failures, policy rollouts, human videos, and real-to-sim rollouts, across five real-world manipulation tasks. By keeping the task suite, successful demonstrations, and the evaluation setup fixed, we study the effect of these sources through LoRA adaptation of a reward model and few-shot prompting of a frozen model in two different data scale scenarios. We evaluate the resulting reward models on a custom held-out benchmark of 250 human-annotated policy rollouts, measuring trajectory ranking, partial-completion calibration, and success detection. Finally, we use selected reward models to guide RL post-training of π₀ and test whether improvements in offline reward quality translate into better robot behavior. In sum, our study examines whether inexpensive counterfactual sources can match or surpass smaller amounts of faithful real-robot failure data when scaled, for improving rewards models in robot manipulation.</p>
 </section>
 
 <section id="sources" class="block">
   <h2>Four sources of failure</h2>
-  <p class="lead">Each source records the same five tasks. Every failure is graded by how far it got, from low to high progress. The red overlay marks the agent in a failed attempt.</p>
+  <p class="lead">Each source records the same five tasks. Every failure is graded by how far it got; here are low, medium and high progress failures on pour cup for each source.</p>
   <div class="sources" id="sourceCards"></div>
 </section>
 
@@ -108,14 +108,14 @@
 <section id="bibtex" class="block">
   <h2>BibTeX</h2>
 <pre class="bib">@article{thiruvenkadam2026counterfactual,
-  title   = {Counterfactual Study for Reward Models in Robot Manipulation},
+  title   = {The Right Kind of Wrong: Counterfactual Data for Reward Learning in Manipulation},
   author  = {Thiruvenkadam, Gokul Kannan and Patel, Vishal M. and Bharadhwaj, Homanga},
   year    = {2026}
 }</pre>
 </section>
 
 </main>
-<footer class="foot">Counterfactual Study · Johns Hopkins University</footer>
+<footer class="foot">The Right Kind of Wrong · Johns Hopkins University</footer>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

@@ -1,6 +1,6 @@
-# Counterfactual Study: project page
+# The Right Kind of Wrong: project page
 
-Static site for *Counterfactual Study for Reward Models in Robot Manipulation*.
+Static site for *The Right Kind of Wrong: Counterfactual Data for Reward Learning in Manipulation*.
 No build step: plain HTML, CSS and JS.
 
 ```

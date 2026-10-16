@@ -9,24 +9,18 @@ const fmt = v => (v % 1 ? v.toFixed(1) : v) + '%';
 
 /* ---------- four sources ---------- */
 const SRC = [
-  ['teleop','Teleoperated','An operator drives the robot into failure on purpose. Highest fidelity, most robot time.'],
-  ['rollout','Policy rollouts','Zero-shot π₀ failing on its own, recorded on the real robot.'],
+  ['teleop','Teleoperated','An operator guides the robot by hand into failure, on purpose. Highest fidelity, most robot time.'],
+  ['rollout','Policy rollouts','A pre-trained policy runs on its own on the real robot, and its failed attempts are kept.'],
   ['human','Human videos','A person acts out the failure by hand. No robot needed.'],
-  ['sim','Real2sim','Failures scripted in a Gaussian-splat copy of the scene. Near-zero marginal cost.']];
-const GR = [['low','Low'],['medium','Medium'],['high','High']];
+  ['sim','Real2sim','The scene is rebuilt in simulation from a phone scan, where failures are scripted. Near-zero marginal cost.']];
+const GR = [['low','Low progress'],['medium','Medium progress'],['high','High progress']];
 const wrap = document.getElementById('sourceCards');
 SRC.forEach(([k,name,desc]) => {
+  const frames = GR.map(([gk,gl]) => `<div class="frame"><video muted loop playsinline preload="none" poster="media/sources/${k}_${gk}.jpg" data-src="media/sources/${k}_${gk}.mp4" aria-label="${name}, ${gl.toLowerCase()} failure"></video>
+      <span class="grade">${gl}</span></div>`).join('');
   const card = h(`<article class="src">
-    <div class="frame"><video muted loop playsinline preload="none" poster="media/sources/${k}_medium.jpg" data-src="media/sources/${k}_medium.mp4"></video>
-      <span class="tag ${DARKTEXT.has(k)?'dark':''}" style="background:${COL[k]}">${name}</span></div>
-    <h3><i style="background:${COL[k]}"></i>${name}</h3><p>${desc}</p>
-    <div class="grades" role="tablist" aria-label="${name} failure grade"></div></article>`);
-  const v = card.querySelector('video'), g = card.querySelector('.grades');
-  GR.forEach(([gk,gl]) => {
-    const b = h(`<button role="tab" aria-selected="${gk==='medium'}" title="${gl}-progress failure">${gl}</button>`);
-    b.onclick = () => { g.querySelectorAll('button').forEach(x => x.setAttribute('aria-selected', x===b)); v.poster = `media/sources/${k}_${gk}.jpg`; v.dataset.src = v.src = `media/sources/${k}_${gk}.mp4`; v.play().catch(()=>{}); };
-    g.appendChild(b);
-  });
+    <h3><span class="tag ${DARKTEXT.has(k)?'dark':''}" style="background:${COL[k]}">${name}</span></h3><p>${desc}</p>
+    <div class="stack">${frames}</div></article>`);
   wrap.appendChild(card);
 });
 
