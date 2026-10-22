@@ -9,7 +9,7 @@ const fmt = v => (v % 1 ? v.toFixed(1) : v) + '%';
 
 /* ---------- four sources ---------- */
 const SRC = [
-  ['teleop','Teleoperated','An operator guides the robot by hand into failure, on purpose. Highest fidelity, most robot time.'],
+  ['teleop','Kinesthetic teaching','We collected failures by guiding the robot kinesthetically. Highest fidelity, most robot time.'],
   ['rollout','Policy rollouts','A pre-trained policy runs on its own on the real robot, and its failed attempts are kept.'],
   ['human','Human videos','A person acts out the failure by hand. No robot needed.'],
   ['sim','Real2sim','The scene is rebuilt in simulation from a phone scan, where failures are scripted. Near-zero marginal cost.']];
@@ -47,8 +47,8 @@ function drawGrid() {
   });
   // side: task summary + bars
   side.innerHTML = `<h3>${tname}</h3><p>Success rate after RL, 20 trials per reward model.</p>`;
-  const W = 330, rowH = 34, H = rowH*order.length, svg = el('svg', {viewBox:`0 0 ${W} ${H}`, role:'img', 'aria-label':`Success rate on ${tname}`}, side);
-  const x0 = 128, x1 = W - 46;
+  const W = 350, rowH = 34, H = rowH*order.length, svg = el('svg', {viewBox:`0 0 ${W} ${H}`, role:'img', 'aria-label':`Success rate on ${tname}`}, side);
+  const x0 = 150, x1 = W - 46;
   order.forEach((m,i) => {
     const v = RL.rates[m][rlTask], y = i*rowH + rowH/2, w = (x1-x0) * v/100;
     const t = el('text', {x:x0-10, y:y+4, 'text-anchor':'end', 'font-size':12.5, fill:'#55514a'}, svg); t.textContent = METH.find(x=>x[0]===m)[1];
@@ -87,7 +87,7 @@ drawGrid();
 
 /* ---------- reward curves window ---------- */
 const TASKR = window.REWARD;
-const MODELS = [['teleop','Teleop'],['rollout','Rollout'],['human','Human video'],['sim','Real2sim']];
+const MODELS = [['teleop','Kinesthetic teaching'],['rollout','Rollout'],['human','Human video'],['sim','Real2sim']];
 const shown = {teleop:true,rollout:true,human:true,sim:true};
 let task = 0, clip = 0, simPlaying = false, lastTs = 0;
 const video = document.getElementById('video'), scrub = document.getElementById('scrub'), vidBox = document.getElementById('vidBox');
