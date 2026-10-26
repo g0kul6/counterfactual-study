@@ -23,10 +23,10 @@
   <p class="sub">Which failures should you collect to train a reward model for robot RL?</p>
   <p class="authors">
     <span>Gokul Kannan Thiruvenkadam</span>
-    <span>Vishal M. Patel</span>
-    <span>Homanga Bharadhwaj</span>
+    <span>Vishal M. Patel<sup>†</sup></span>
+    <span>Homanga Bharadhwaj<sup>†</sup></span>
   </p>
-  <p class="affil">Johns Hopkins University</p>
+  <p class="affil">Johns Hopkins University<span class="eq">† Equal advising</span></p>
   <nav class="links" aria-label="Paper links">
     <a class="btn" href="#" data-todo="paper">Paper</a>
     <a class="btn" href="#" data-todo="arxiv">arXiv</a>
@@ -38,12 +38,12 @@
 
 <section id="teaser" class="block">
   <video class="teaser" data-src="media/teaser.mp4" poster="media/teaser.jpg" loop muted playsinline controls preload="none"></video>
-  <p class="tldr"><b>TL;DR</b> Reinforcement learning (RL) can improve robot policies beyond imitation learning, but it requires rewards that capture task progress and failure. Learning such rewards requires not only successful demonstrations, but also informative counterfactual failures that can guide the model on behaviors to penalize. However, large-scale robot datasets are dominated by successful behavior, and collecting failures on real hardware is expensive. This raises a practical question: given a limited data-collection budget, which sources of counterfactual experience are worth investing in? We compare four sources of failure data: kinesthetic teaching, policy rollouts, human videos, and real-to-sim rollouts, across five real-world manipulation tasks. By keeping the task suite, successful demonstrations, and the evaluation setup fixed, we study the effect of these sources through LoRA adaptation of a reward model and few-shot prompting of a frozen model in two different data scale scenarios. We evaluate the resulting reward models on a custom held-out benchmark of 250 human-annotated policy rollouts, measuring trajectory ranking, partial-completion calibration, and success detection. Finally, we use selected reward models to guide RL post-training of π₀ and test whether improvements in offline reward quality translate into better robot behavior. In sum, our study examines whether inexpensive counterfactual sources can match or surpass smaller amounts of faithful real-robot failure data when scaled, for improving rewards models in robot manipulation.</p>
+  <p class="tldr"><b>TL;DR</b> Reinforcement learning (RL) can improve robot policies beyond imitation learning, but it requires rewards that capture task progress and failure. Learning such rewards requires not only successful demonstrations, but also informative counterfactual failures that can guide the model on behaviors to penalize. However, large-scale robot datasets are dominated by successful behavior, and collecting failures on real hardware is expensive. This raises a practical question: given a limited data-collection budget, which sources of counterfactual experience are worth investing in? We compare four sources of failure data: kinesthetic teaching (KT), policy rollouts, human videos, and real-to-sim rollouts, across five real-world manipulation tasks. By keeping the task suite, successful demonstrations, and the evaluation setup fixed, we study the effect of these sources through LoRA adaptation of a reward model and few-shot prompting of a frozen model in two different data scale scenarios. We evaluate the resulting reward models on a custom held-out benchmark of 250 human-annotated policy rollouts, measuring trajectory ranking, partial-completion calibration, and success detection. Finally, we use selected reward models to guide RL post-training of π₀ and test whether improvements in offline reward quality translate into better robot behavior. In sum, our study examines whether inexpensive counterfactual sources can match or surpass smaller amounts of faithful real-robot failure data when scaled, for improving rewards models in robot manipulation.</p>
 </section>
 
 <section id="sources" class="block">
   <h2>Four sources of failure</h2>
-  <p class="lead">Each source records the same five tasks. Every failure is graded by how far it got; here are low, medium and high progress failures on pour cup for each source.</p>
+  <p class="lead">Each source records the same five tasks. Every failure is graded by how far it got; here are low, medium and high progress failures on Pour for each source.</p>
   <div class="sources" id="sourceCards"></div>
 </section>
 
@@ -67,7 +67,7 @@
       <h3>Success rate across all three tasks</h3>
       <div class="legend" id="rlLegend"></div>
     </div>
-    <div class="chartwrap"><svg id="rlChart" role="img" aria-label="Grouped bar chart of success rate per reward source for remove lid, pour cup, stack cups and the average"></svg><div class="tip" id="rlTip"></div></div>
+    <div class="chartwrap"><svg id="rlChart" role="img" aria-label="Grouped bar chart of success rate per reward source for Remove lid, Pour, Stack Cups and the average"></svg><div class="tip" id="rlTip"></div></div>
     <details class="tbl"><summary>Show as table</summary><div id="rlTable"></div></details>
   </div>
 </section>

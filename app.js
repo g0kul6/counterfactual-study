@@ -9,7 +9,7 @@ const fmt = v => (v % 1 ? v.toFixed(1) : v) + '%';
 
 /* ---------- four sources ---------- */
 const SRC = [
-  ['teleop','Kinesthetic teaching','We collected failures by guiding the robot kinesthetically. Highest fidelity, most robot time.'],
+  ['teleop','KT','We collected failures by guiding the robot kinesthetically. Highest fidelity, most robot time.'],
   ['rollout','Policy rollouts','A pre-trained policy runs on its own on the real robot, and its failed attempts are kept.'],
   ['human','Human videos','A person acts out the failure by hand. No robot needed.'],
   ['sim','Real2sim','The scene is rebuilt in simulation from a phone scan, where failures are scripted. Near-zero marginal cost.']];
@@ -62,7 +62,7 @@ drawGrid();
 // all-task grouped bars
 (function () {
   const svg = document.getElementById('rlChart'), tip = document.getElementById('rlTip');
-  const groups = ['Remove lid','Pour cup','Stack cups','Average'], order = ['zs','rb','teleop','rollout','human','sim'];
+  const groups = ['Remove lid','Pour','Stack Cups','Average'], order = ['zs','rb','teleop','rollout','human','sim'];
   const W = 1080, H = 340, L = 44, R = 10, T = 22, B = 40, gw = (W-L-R)/groups.length, bw = 30, gap = 6;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   const y = v => T + (H-T-B)*(1-v/100);
@@ -87,7 +87,7 @@ drawGrid();
 
 /* ---------- reward curves window ---------- */
 const TASKR = window.REWARD;
-const MODELS = [['teleop','Kinesthetic teaching'],['rollout','Rollout'],['human','Human video'],['sim','Real2sim']];
+const MODELS = [['teleop','KT'],['rollout','Rollout'],['human','Human video'],['sim','Real2sim']];
 const shown = {teleop:true,rollout:true,human:true,sim:true};
 let task = 0, clip = 0, simPlaying = false, lastTs = 0;
 const video = document.getElementById('video'), scrub = document.getElementById('scrub'), vidBox = document.getElementById('vidBox');
