@@ -27,11 +27,13 @@ h3{font-size:18px;font-weight:600}
 .affil{margin:4px 0 22px;color:var(--ink2)}
 .affil .eq{margin-left:16px;font-size:14px}
 .authors sup{font-size:.62em;margin-left:1px}
+.authors a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.authors a:hover{border-bottom-color:currentColor}
 .links{display:flex;flex-wrap:wrap;gap:10px}
 .btn{display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;font-size:15px}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .btn:hover{opacity:.85}
-.tldr{max-width:80ch;margin:22px 0 0;color:var(--ink2)}
+.tldr{margin:22px 0 0;padding:20px 24px;border:1px solid var(--line);border-radius:18px;color:var(--ink2)}
 .tldr b{color:var(--ink);margin-right:6px}
 .teaser{display:block;width:100%;aspect-ratio:16/9;border-radius:14px;background:#000}
 
@@ -129,6 +131,7 @@ h3{font-size:18px;font-weight:600}
   .win-body{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:520px){
+  .tldr{padding:16px 16px}
   .src .stack{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
   .src .frame{border-radius:7px}
   .src .grade{left:4px;bottom:4px;font-size:9.5px;padding:1px 6px 2px}
