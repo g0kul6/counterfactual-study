@@ -18,8 +18,8 @@ const wrap = document.getElementById('sourceCards');
 SRC.forEach(([k,name,desc]) => {
   const frames = GR.map(([gk,gl]) => `<div class="frame"><video muted loop playsinline preload="none" poster="media/sources/${k}_${gk}.jpg" data-src="media/sources/${k}_${gk}.mp4" aria-label="${name}, ${gl.toLowerCase()} failure"></video>
       <span class="grade">${gl}</span></div>`).join('');
-  const card = h(`<article class="src">
-    <h3><span class="tag ${DARKTEXT.has(k)?'dark':''}" style="background:${COL[k]}">${name}</span></h3><p>${desc}</p>
+  const card = h(`<article class="src" style="--c:${COL[k]}">
+    <h3><span class="tag">${name}</span></h3><p>${desc}</p>
     <div class="stack">${frames}</div></article>`);
   wrap.appendChild(card);
 });
@@ -104,7 +104,7 @@ TASKR.forEach((t,i) => {
   rwTabs.appendChild(b);
 });
 MODELS.forEach(([m,name]) => {
-  const b = h(`<button aria-pressed="true"><i style="background:${m==='robometer'?'transparent;box-shadow:inset 0 0 0 2px '+COL.rb:COL[m]}"></i>${name}</button>`);
+  const b = h(`<button aria-pressed="true" style="--c:${m==='robometer'?COL.rb:COL[m]}"><i style="background:${m==='robometer'?'transparent;box-shadow:inset 0 0 0 2px '+COL.rb:COL[m]}"></i>${name}</button>`);
   b.dataset.m = m;
   b.onclick = () => { shown[m] = !shown[m]; b.setAttribute('aria-pressed', shown[m]); applyVisibility(); sync(); };
   toggles.appendChild(b);
